@@ -5,4 +5,7 @@ class TvShow < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  multisearchable against: [:title, :synopsis]
+
 end
