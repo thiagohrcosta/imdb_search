@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
   def index
     if params[:query]
-      query = "title @@ :query OR synopsis @@ :query"
-      @movies = Movie.where(query, query: "%#{params[:query]}%")
+      @movies = Movie.search_by_title_and_synopsis(params[:query])
     else
       @movies = Movie.all
     end
