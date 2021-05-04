@@ -29,7 +29,12 @@ class MoviesController < ApplicationController
   end
 
   def update
-
+    @movie = Movie.find(params[:id])
+    if @movie.update(movie_params)
+      redirect_to movie_path(@movie)
+    else
+      render :new
+    end
   end
 
   private
