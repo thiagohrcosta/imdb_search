@@ -6,4 +6,27 @@ class MoviesController < ApplicationController
       @movies = Movie.all
     end
   end
+
+  def show
+    @movie = Movie.find(params[:id])
+  end
+
+  def new
+    @movie = Movie.new
+  end
+
+  def create
+    @movie = Movie.create(movie_params)
+    if @movie.save
+      redirect_to movie_path(@movie)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def movie_params
+    params.require(:movie).permit(:title, :year, :synopsis, :box, :director_id)
+  end
 end
