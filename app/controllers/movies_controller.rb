@@ -24,6 +24,14 @@ class MoviesController < ApplicationController
     end
   end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+
+  end
+
   private
 
   def movie_params
