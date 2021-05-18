@@ -53,6 +53,7 @@ This project was created with:
 
     end
 
+![gif](https://res.cloudinary.com/dloadb2bx/image/upload/v1621362443/imdb4_fnq7jz.gif)
 
 ## CSS Grid
 
